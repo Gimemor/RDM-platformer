@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="game" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="./game" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lSDL -lGL" />
+					<Add option="-lSDL_image" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="/home/oleg/Projects/Test3/include" />
+			<Add directory="/home/oleg/Projects/Test3/src" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="/home/oleg/Projects/Test3/" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-lSDL -lGL" />
+		</Linker>
+		<Unit filename="include/Event_Handler.h" />
+		<Unit filename="include/c_Graphics.h" />
+		<Unit filename="include/game.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/c_EventHandler.cpp" />
+		<Unit filename="src/c_Graphics.cpp" />
+		<Unit filename="src/game.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

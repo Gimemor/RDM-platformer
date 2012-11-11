@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1352657086 source:/home/oleg/Projects/Test3/main.cpp
+	"game.h"
+
+1352662248 /home/oleg/Projects/Test3/include/game.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<map>
+	<Box2D.h>
+	"Event_Handler.h"
+	"c_Graphics.h"
+
+1352658206 /home/oleg/Projects/Test3/include/Event_Handler.h
+	"game.h"
+
+1352671894 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
+	"Event_Handler.h"
+
+1352662635 source:/home/oleg/Projects/Test3/src/game.cpp
+	"game.h"
+	<iostream>
+
+1352662229 /home/oleg/Projects/Test3/include/c_Graphics.h
+	"game.h"
+
+1352662769 source:/home/oleg/Projects/Test3/src/c_Graphics.cpp
+	"c_Graphics.h"
+	<stdio.h>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="include/Event_Handler.h" open="1" top="0" tabpos="3">
+		<Cursor position="253" topLine="0" />
+	</File>
+	<File name="include/c_Graphics.h" open="1" top="0" tabpos="6">
+		<Cursor position="585" topLine="0" />
+	</File>
+	<File name="include/game.h" open="1" top="0" tabpos="5">
+		<Cursor position="29" topLine="1" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="44" topLine="0" />
+	</File>
+	<File name="src/c_EventHandler.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="956" topLine="13" />
+	</File>
+	<File name="src/c_Graphics.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="450" topLine="30" />
+	</File>
+	<File name="src/game.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1774" topLine="31" />
+	</File>
+</CodeBlocks_layout_file>
