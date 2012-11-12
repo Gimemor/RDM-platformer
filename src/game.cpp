@@ -98,12 +98,19 @@ void c_Game::render()
     SDL_GL_SwapBuffers();
 }
 
-
-
 void c_Game::exit()
+{ isRunning=false; }
+
+
+void  c_Game::setResolution(int w, int h)
 {
-    isRunning=false;
+    w_width=w;
+    w_height=h;
+    if(SDL_SetVideoMode(w_width, w_height, 0, SDL_HWSURFACE | SDL_OPENGL)==0) return;
+    gr_Graph->setViewPort(0.0f, 0.0f, w_width, w_height);
+    setup();
 }
+
 
 void c_Game::clean()
 {

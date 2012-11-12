@@ -23,6 +23,7 @@ class c_Game
         GLuint loadTexture(char *file)  ;
         void setFPS(int x);
         void setKeyDelay(int x);
+        void setResolution(int w, int h);
         virtual ~c_Game();
     protected:
     private:

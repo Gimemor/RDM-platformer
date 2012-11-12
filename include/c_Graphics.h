@@ -18,7 +18,6 @@ class c_Graphics
         virtual ~c_Graphics();
     protected:
     private:
-        GLuint textures[2];
         GLfloat r,g,b,a; // Current Color
         GLfloat cR,cG,cB,cA; // clear Color
         GLint w_width,w_height;
