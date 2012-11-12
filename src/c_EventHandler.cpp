@@ -7,11 +7,18 @@ c_EventHandler::c_EventHandler():game(0),gr_Graph(0)
 
 c_EventHandler::c_EventHandler(c_Game *g):game(g),gr_Graph(0)
 {   resetKeys(); }
+
 void c_EventHandler::resetKeys()
 {
     for(int i=0; i<322; i++)
         keys[i]=0;
 }
+
+void c_EventHandler::setGame(c_Game *gr)
+{
+    game=gr;
+}
+
 
 void c_EventHandler::setGraph(c_Graphics *gr)
 {
@@ -53,4 +60,7 @@ void c_EventHandler::onKeyUp(SDL_Event *e)
 
 }
 c_EventHandler::~c_EventHandler()
-{}
+{
+     gr_Graph=0;
+     game=0;
+}

@@ -4,7 +4,7 @@
 #include <SDL/SDL_image.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <map>
+#include <iostream>
 #include <Box2D.h>
 #include "Event_Handler.h"
 #include "c_Graphics.h"
@@ -20,12 +20,13 @@ class c_Game
         void exit();
         void render();
         void clean();
-        void loadTexture(char* name, char *file);
+        GLuint loadTexture(char *file)  ;
         void setFPS(int x);
         void setKeyDelay(int x);
         virtual ~c_Game();
     protected:
     private:
+        GLuint tex1;
         uint32 timer;
         int fps;
         int KeyDelay;

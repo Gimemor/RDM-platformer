@@ -26,8 +26,7 @@ void c_Graphics::restoreView()
     glPopMatrix();
     glPushMatrix();
 }
-void c_Graphics::saveTexture(GLuint t, char *n)
-{ textures[n]=t; }
+
 
 void c_Graphics::setViewPort(float x=0, float y=0, float w=768, float h=512)
 {
@@ -38,15 +37,6 @@ void c_Graphics::setViewPort(float x=0, float y=0, float w=768, float h=512)
     glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
 }
-
-void c_Graphics::use_texture(char * name)
-{
-    if (textures.count(name))
-        glBindTexture(GL_TEXTURE_2D, textures[name]);
-    else   printf("no");
-
-}
-
 
 void c_Graphics::drawQuad(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
 {
@@ -67,22 +57,24 @@ void c_Graphics::drawQuad(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
 }
 
 
-void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, char *name)
+void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex1)
 {
-    use_texture(name);
+    glEnable(GL_TEXTURE_2D);
     glColor4f(r,g,b,a);
     glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
     glTranslatef(x1,y1,0);
+    glBindTexture(GL_TEXTURE_2D, tex1);
     glBegin(GL_QUADS);
     {
-            glTexCoord2f(-1, -1);  glVertex2f(0,0);
-            glTexCoord2f(-1, 0);  glVertex2f(x2,0);
-            glTexCoord2f(0, 0);  glVertex2f(x2,y2);
-            glTexCoord2f(-1, 0);  glVertex2f(0,y2);
+            glTexCoord2f( 0, -1); glVertex2f(0,0);
+            glTexCoord2f( 0, 0);  glVertex2f(x2,0);
+            glTexCoord2f( 1, 0);  glVertex2f(x2,y2);
+            glTexCoord2f( 1, -1);   glVertex2f(0,y2);
     }
     glEnd();
     glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
 
 }
 
@@ -90,9 +82,9 @@ void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, char
 void c_Graphics::clear()
 {
    glClearColor(cR,cG,cB,cA);
-   glClear(GL_COLOR_BUFFER_BIT);
+   glClear(GL_COLOR_BUFFER_BIT );
 }
 c_Graphics::~c_Graphics()
 {
-    //dtor
+
 }

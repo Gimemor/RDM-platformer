@@ -12,6 +12,7 @@ class c_EventHandler
         void handle(SDL_Event *e);
         void onKeyDown();
         void onKeyUp(SDL_Event *e);
+        void setGame(c_Game *gr);
         void setGraph(c_Graphics *gr);
         void resetKeys();
         void onExit();

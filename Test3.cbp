@@ -30,7 +30,7 @@
 			<Add directory="/home/oleg/Projects/Test3/" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-lSDL -lGL" />
+			<Add option="-lSDL -lGL -lGLU" />
 		</Linker>
 		<Unit filename="include/Event_Handler.h" />
 		<Unit filename="include/c_Graphics.h" />
