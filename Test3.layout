@@ -2,24 +2,36 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="include/Event_Handler.h" open="1" top="0" tabpos="3">
-		<Cursor position="325" topLine="0" />
+		<Cursor position="390" topLine="0" />
+	</File>
+	<File name="include/Level.h" open="1" top="1" tabpos="8">
+		<Cursor position="390" topLine="0" />
 	</File>
 	<File name="include/c_Graphics.h" open="1" top="0" tabpos="6">
-		<Cursor position="585" topLine="0" />
+		<Cursor position="549" topLine="0" />
 	</File>
 	<File name="include/game.h" open="1" top="0" tabpos="5">
-		<Cursor position="50" topLine="2" />
+		<Cursor position="1053" topLine="8" />
+	</File>
+	<File name="include/types.h" open="1" top="0" tabpos="9">
+		<Cursor position="15" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="44" topLine="0" />
+		<Cursor position="45" topLine="0" />
+	</File>
+	<File name="src/Level.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="281" topLine="0" />
 	</File>
 	<File name="src/c_EventHandler.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="184" topLine="21" />
+		<Cursor position="1016" topLine="22" />
 	</File>
 	<File name="src/c_Graphics.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="1753" topLine="44" />
+		<Cursor position="1099" topLine="0" />
 	</File>
-	<File name="src/game.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="1994" topLine="47" />
+	<File name="src/game.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="3821" topLine="144" />
+	</File>
+	<File name="src/types.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="20" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

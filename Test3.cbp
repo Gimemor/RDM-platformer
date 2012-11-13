@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Release">
 				<Option output="./game" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../Test3/." />
 				<Option object_output="obj/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -33,12 +34,16 @@
 			<Add option="-lSDL -lGL -lGLU" />
 		</Linker>
 		<Unit filename="include/Event_Handler.h" />
+		<Unit filename="include/Level.h" />
 		<Unit filename="include/c_Graphics.h" />
 		<Unit filename="include/game.h" />
+		<Unit filename="include/types.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/c_EventHandler.cpp" />
 		<Unit filename="src/c_Graphics.cpp" />
 		<Unit filename="src/game.cpp" />
+		<Unit filename="src/types.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

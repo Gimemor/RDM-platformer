@@ -1,7 +1,7 @@
 #ifndef C_GRAPHICS_H
 #define C_GRAPHICS_H
 #include "game.h"
-
+struct object;
 class c_Graphics
 {
     public:
@@ -13,6 +13,7 @@ class c_Graphics
         void moveCamera( float x, float y);
         void restoreView();
         void drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex);
+        void drawSprite(object *tex);
         void clear();
         void setViewPort(float x, float y, float w, float h);
         virtual ~c_Graphics();

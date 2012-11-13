@@ -5,11 +5,16 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
+#include <fstream>
 #include <Box2D.h>
 #include "Event_Handler.h"
 #include "c_Graphics.h"
+#include "Level.h"
+#include "types.h"
 class c_EventHandler;
 class c_Graphics;
+class Level;
+
 class c_Game
 {
     public:
@@ -22,12 +27,15 @@ class c_Game
         void clean();
         GLuint loadTexture(char *file)  ;
         void setFPS(int x);
+        void draw_level();
         void setKeyDelay(int x);
         void setResolution(int w, int h);
+        void setCaption(char *file, char *icon);
+        void loadLevel(char *file);
+        void unloadLevel();
         virtual ~c_Game();
     protected:
     private:
-        GLuint tex1;
         uint32 timer;
         int fps;
         int KeyDelay;
@@ -36,10 +44,7 @@ class c_Game
         c_EventHandler *e_Handler;
         bool isRunning;
         c_Graphics *gr_Graph;
-
-
-
-
+        Level *map;
 
 };
 

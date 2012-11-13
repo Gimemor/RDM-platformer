@@ -1,31 +1,47 @@
 # depslib dependency file v1.0
-1352657086 source:/home/oleg/Projects/Test3/main.cpp
+1352743226 source:/home/oleg/Projects/Test3/main.cpp
 	"game.h"
 
-1352741716 /home/oleg/Projects/Test3/include/game.h
+1352845573 /home/oleg/Projects/Test3/include/game.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	<iostream>
+	<fstream>
 	<Box2D.h>
 	"Event_Handler.h"
 	"c_Graphics.h"
+	"Level.h"
+	"types.h"
 
 1352731033 /home/oleg/Projects/Test3/include/Event_Handler.h
 	"game.h"
 
-1352741817 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
+1352837947 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
 	"Event_Handler.h"
 
-1352742011 source:/home/oleg/Projects/Test3/src/game.cpp
+1352846016 source:/home/oleg/Projects/Test3/src/game.cpp
 	"game.h"
 	<iostream>
 
-1352741648 /home/oleg/Projects/Test3/include/c_Graphics.h
+1352750388 /home/oleg/Projects/Test3/include/c_Graphics.h
 	"game.h"
 
-1352740808 source:/home/oleg/Projects/Test3/src/c_Graphics.cpp
+1352750377 source:/home/oleg/Projects/Test3/src/c_Graphics.cpp
 	"c_Graphics.h"
 	<stdio.h>
+
+1352842848 /home/oleg/Projects/Test3/include/types.h
+	"game.h"
+
+1352846503 source:/home/oleg/Projects/Test3/src/Level.cpp
+	"Level.h"
+
+1352846482 /home/oleg/Projects/Test3/include/Level.h
+	"game.h"
+	"types.h"
+
+1352842670 source:/home/oleg/Projects/Test3/src/types.cpp
+	"types.h"
 

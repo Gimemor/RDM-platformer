@@ -77,6 +77,8 @@ void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLui
     glDisable(GL_TEXTURE_2D);
 
 }
+void c_Graphics::drawSprite(object *tex)
+{ drawSprite(tex->x, tex->y, tex->w, tex->h, tex->texture); }
 
 
 void c_Graphics::clear()

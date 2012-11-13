@@ -51,8 +51,6 @@ void c_EventHandler::onKeyDown()
     if(keys[SDLK_RIGHT]) gr_Graph->moveCamera(-5,0);
     if(keys[SDLK_LEFT]) gr_Graph->moveCamera(5,0);
     if(keys[SDLK_SPACE]) gr_Graph->restoreView();
-    if(keys[SDLK_TAB]) game->setResolution(460,320);
-
 }
 
 
