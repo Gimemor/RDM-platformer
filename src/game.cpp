@@ -71,10 +71,20 @@ void c_Game::render()
 
 void c_Game::draw_level()
 {
-    for(int i=0; i<map->getW(); i++)
+
+    int camx=gr_Graph->getCamX();
+    int camy=gr_Graph->getCamY();
+    int tile_w=gr_Graph->getTileW();
+    int tile_h=gr_Graph->getTileH();
+    int max_x=camx/tile_w+w_width/tile_w;
+    int max_y=camy/tile_h+w_height/tile_h;
+    if(max_x>map->getW()) max_x=map->getW();
+    if(max_y>map->getH()) max_y=map->getH();
+    for(int i=camx/tile_w; i<max_x+1; i++)
     {
-        for(int j=0; j<map->getH(); j++)
+        for(int j=camy/tile_h; j<max_y+1; j++)
         {
+
             object *tmp=map->getBlock(i,j);
             if(tmp->texture==0) continue;
             gr_Graph->drawSprite(i*tmp->w, j*tmp->h, tmp->w, tmp->h, tmp->texture);
@@ -136,7 +146,7 @@ void c_Game::loadLevel(char *file)
         in >> n >> w >> h;
         n++;
         object tex[n]; tex[0].texture=0;
-
+        gr_Graph->setSize(w_width,w_height,w,h,w,h);
         for(int i=1; i<n;i++)
         {
            in >> path >> type;
@@ -146,11 +156,12 @@ void c_Game::loadLevel(char *file)
         }
         object **a=0;
         in >> w >> h;
-
+        gr_Graph->setTilesCount(w,h);
+        w+=2; h+=2;
         a=new object *[w];
         for(int i=0; i<w; i++)
             a[i]=new object[h];
-
+        w-=2; h-=2;
         for(int i=0; i<h; i++)
             for(int j=0; j<w; j++)
             {

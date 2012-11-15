@@ -2,6 +2,7 @@
 #include <stdio.h>
 c_Graphics::c_Graphics()
 {
+    cam_x=cam_y=0;
     setClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     setColor(1.0f, 1.0f, 1.0f, 0.0f);
 }
@@ -15,10 +16,29 @@ void c_Graphics::scale(float w, float h)
 {
     glScalef(w,h,0.0f);
 }
+void c_Graphics::setSize(GLint w_wid, GLint w_heig, GLint t_wid=32, GLint t_heig=32, GLint t_x=32, GLint t_y=32)
+{
+    w_height=w_heig; tiles_x=t_x;
+    w_width=w_wid;   tiles_y=t_y;
+    tile_width=t_wid;
+    tile_height=t_heig;
+}
+void c_Graphics::setTilesCount(GLint t_x, GLint t_y)
+{
+    tiles_x=t_x; tiles_y=t_y;
+}
+
 
 void c_Graphics::moveCamera( float x, float y)
 {
-    glTranslatef(x,y,0);
+   std::cout << cam_x+x << ' ' << cam_y+y << std::endl;
+   if(cam_x-x>=0 && cam_x-x<=tile_width*tiles_x-w_width && cam_y-y>=0 && cam_y-y<=(tile_height*tiles_y)-w_height )
+    {
+
+        cam_x-=x;
+        cam_y-=y;
+        glTranslatef(x,y,0);
+    }
 }
 void c_Graphics::restoreView()
 {
@@ -81,6 +101,15 @@ void c_Graphics::drawSprite(object *tex)
 { drawSprite(tex->x, tex->y, tex->w, tex->h, tex->texture); }
 
 
+
+int c_Graphics::getTileW()
+{ return tile_width; }
+int c_Graphics::getTileH()
+{ return tile_height; }
+int c_Graphics::getCamX()
+{ return cam_x; }
+int c_Graphics::getCamY()
+{ return cam_y; }
 void c_Graphics::clear()
 {
    glClearColor(cR,cG,cB,cA);
