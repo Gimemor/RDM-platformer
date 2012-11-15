@@ -76,7 +76,6 @@ void c_Graphics::drawQuad(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
 
 }
 
-
 void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex1)
 {
     glEnable(GL_TEXTURE_2D);
@@ -87,10 +86,10 @@ void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLui
     glBindTexture(GL_TEXTURE_2D, tex1);
     glBegin(GL_QUADS);
     {
-            glTexCoord2f( 0, -1); glVertex2f(0,0);
-            glTexCoord2f( 0, 0);  glVertex2f(x2,0);
-            glTexCoord2f( 1, 0);  glVertex2f(x2,y2);
-            glTexCoord2f( 1, -1);   glVertex2f(0,y2);
+            glTexCoord2f( 0, 0); glVertex2f(0,0);
+            glTexCoord2f( 1, 0);  glVertex2f(x2,0);
+            glTexCoord2f( 1, 1);  glVertex2f(x2,y2);
+            glTexCoord2f( 0, 1);   glVertex2f(0,y2);
     }
     glEnd();
     glPopMatrix();

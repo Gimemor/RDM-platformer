@@ -19,6 +19,7 @@ class c_Graphics
         int getTileH();
         int getCamX();
         int getCamY();
+
         void setSize(GLint w_wid, GLint w_heig, GLint t_wid, GLint t_heig, GLint t_x, GLint t_y);
         void setTilesCount(GLint t_x, GLint t_y);
         void setViewPort(float x, float y, float w, float h);

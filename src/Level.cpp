@@ -28,6 +28,11 @@ void Level::unload()
     map=0;
 }
 
+void Level::setBackground(GLuint b)
+{ background=b; }
+
+GLuint Level::getBackground()
+{ return background; }
 
 Level::~Level()
 {

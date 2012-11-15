@@ -80,11 +80,11 @@ void c_Game::draw_level()
     int max_y=camy/tile_h+w_height/tile_h;
     if(max_x>map->getW()) max_x=map->getW();
     if(max_y>map->getH()) max_y=map->getH();
+    gr_Graph->drawSprite(camx,camy, w_width, w_height, map->getBackground());
     for(int i=camx/tile_w; i<max_x+1; i++)
     {
         for(int j=camy/tile_h; j<max_y+1; j++)
         {
-
             object *tmp=map->getBlock(i,j);
             if(tmp->texture==0) continue;
             gr_Graph->drawSprite(i*tmp->w, j*tmp->h, tmp->w, tmp->h, tmp->texture);
@@ -154,6 +154,18 @@ void c_Game::loadLevel(char *file)
            tex[i].setTexture(loadTexture(path),type);
            tex[i].w=w; tex[i].h=h;
         }
+        map=new Level();
+        in >> n;
+        if(n==1)
+        {
+            in >> path;
+                        std::cout << path << std::endl;
+
+            map->setBackground(loadTexture(path));
+        }
+        else map->setBackground(0);
+                    std::cout << path << std::endl;
+
         object **a=0;
         in >> w >> h;
         gr_Graph->setTilesCount(w,h);
@@ -168,8 +180,6 @@ void c_Game::loadLevel(char *file)
                 in >> n;
                 a[j][i]=tex[n];
             }
-
-        map=new Level();
         map->setLevel(w,h,a);
         in.close();
 }
