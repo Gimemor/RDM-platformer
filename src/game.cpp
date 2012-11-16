@@ -17,6 +17,8 @@ bool c_Game::setup()
     setKeyDelay(25); timer=0;
     glEnable(GL_BLEND);
     glEnable(GL_ALPHA_TEST);
+        glEnable(GL_LIGHTING);
+
     glAlphaFunc(GL_GREATER, 0.5);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setCaption("Game","");
@@ -42,7 +44,7 @@ int c_Game::run()
     setup();
     SDL_Event e;
     loadLevel("level1/config.ini");
-
+    player=loadTexture("gfx/player.png");
     unsigned long ltFPS=0, ltKeyD=0; // count of ticks
     while(isRunning)
     {
@@ -65,13 +67,20 @@ void c_Game::render()
 {
     gr_Graph->clear();
     draw_level();
+    GLfloat texs[]={
+                        0,     0,
+                        0.9/5,  0,
+                        0.9/5,  1,
+                        0,     1
+                    };
+    gr_Graph->drawSprite(60,1040,32,32,player,texs);
+
     SDL_GL_SwapBuffers();
 }
 
 
 void c_Game::draw_level()
 {
-
     int camx=gr_Graph->getCamX();
     int camy=gr_Graph->getCamY();
     int tile_w=gr_Graph->getTileW();

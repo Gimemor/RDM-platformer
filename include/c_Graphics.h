@@ -13,6 +13,7 @@ class c_Graphics
         void moveCamera( float x, float y);
         void restoreView();
         void drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex);
+        void drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex, GLfloat* cord);
         void drawSprite(object *tex);
         void clear();
         int getTileW();

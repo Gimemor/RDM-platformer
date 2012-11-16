@@ -2,7 +2,7 @@
 1352743226 source:/home/oleg/Projects/Test3/main.cpp
 	"game.h"
 
-1352845573 /home/oleg/Projects/Test3/include/game.h
+1353023244 /home/oleg/Projects/Test3/include/game.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	<GL/gl.h>
@@ -21,14 +21,14 @@
 1352837947 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
 	"Event_Handler.h"
 
-1353020812 source:/home/oleg/Projects/Test3/src/game.cpp
+1353024471 source:/home/oleg/Projects/Test3/src/game.cpp
 	"game.h"
 	<iostream>
 
-1353020399 /home/oleg/Projects/Test3/include/c_Graphics.h
+1353023706 /home/oleg/Projects/Test3/include/c_Graphics.h
 	"game.h"
 
-1353021174 source:/home/oleg/Projects/Test3/src/c_Graphics.cpp
+1353024731 source:/home/oleg/Projects/Test3/src/c_Graphics.cpp
 	"c_Graphics.h"
 	<stdio.h>
 

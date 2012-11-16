@@ -96,6 +96,30 @@ void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLui
     glDisable(GL_TEXTURE_2D);
 
 }
+
+void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex1, GLfloat *cord)
+{
+    glEnable(GL_TEXTURE_2D);
+    glColor4f(r,g,b,a);
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glTranslatef(x1,y1,0);
+    glBindTexture(GL_TEXTURE_2D, tex1);
+    glBegin(GL_QUADS);
+    {
+            glTexCoord2f( cord[0], cord[1]);  glVertex2f(0,0);
+            glTexCoord2f( cord[2], cord[3]);  glVertex2f(x2,0);
+            glTexCoord2f( cord[4], cord[5]);  glVertex2f(x2,y2);
+            glTexCoord2f( cord[6], cord[7]);  glVertex2f(0,y2);
+    }
+    glEnd();
+    glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+
+}
+
+
+
 void c_Graphics::drawSprite(object *tex)
 { drawSprite(tex->x, tex->y, tex->w, tex->h, tex->texture); }
 

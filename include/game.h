@@ -36,6 +36,7 @@ class c_Game
         virtual ~c_Game();
     protected:
     private:
+        GLuint player;
         uint32 timer;
         int fps;
         int KeyDelay;
