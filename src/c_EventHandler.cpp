@@ -50,7 +50,7 @@ void c_EventHandler::onKeyDown()
     if(keys[SDLK_DOWN]) gr_Graph->moveCamera(0,-5);
     if(keys[SDLK_RIGHT]) gr_Graph->moveCamera(-5,0);
     if(keys[SDLK_LEFT]) gr_Graph->moveCamera(5,0);
-    if(keys[SDLK_SPACE]) gr_Graph->restoreView();
+    if(keys[SDLK_SPACE]) gr_Graph->setCamCords(60.0f,768.0f);
 }
 
 

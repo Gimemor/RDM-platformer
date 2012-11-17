@@ -31,7 +31,6 @@ void c_Graphics::setTilesCount(GLint t_x, GLint t_y)
 
 void c_Graphics::moveCamera( float x, float y)
 {
-   std::cout << cam_x+x << ' ' << cam_y+y << std::endl;
    if(cam_x-x>=0 && cam_x-x<=tile_width*tiles_x-w_width && cam_y-y>=0 && cam_y-y<=(tile_height*tiles_y)-w_height )
     {
 
@@ -40,6 +39,24 @@ void c_Graphics::moveCamera( float x, float y)
         glTranslatef(x,y,0);
     }
 }
+
+void c_Graphics::setCamCords( float x, float y)
+{
+    glMatrixMode(GL_MODELVIEW);
+    glPopMatrix();
+    glPushMatrix();
+    cam_x=x;
+    cam_y=y;
+    glTranslatef(-x,-y,0);
+}
+int  c_Graphics::getWinWidth()
+{ return w_width; }
+
+int  c_Graphics::getWinHeight()
+{ return w_height; }
+
+
+
 void c_Graphics::restoreView()
 {
     glMatrixMode(GL_MODELVIEW);
@@ -121,7 +138,7 @@ void c_Graphics::drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLui
 
 
 void c_Graphics::drawSprite(object *tex)
-{ drawSprite(tex->x, tex->y, tex->w, tex->h, tex->texture); }
+{ drawSprite(tex->x, tex->y, tex->w, tex->h, tex->texture, tex->cords); }
 
 
 

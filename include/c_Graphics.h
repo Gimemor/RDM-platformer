@@ -11,6 +11,7 @@ class c_Graphics
         void setColor(float R, float G, float B, float A);
         void scale(float w, float h);
         void moveCamera( float x, float y);
+        void setCamCords( float x, float y);
         void restoreView();
         void drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex);
         void drawSprite(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLuint tex, GLfloat* cord);
@@ -20,6 +21,8 @@ class c_Graphics
         int getTileH();
         int getCamX();
         int getCamY();
+        int getWinWidth();
+        int getWinHeight();
 
         void setSize(GLint w_wid, GLint w_heig, GLint t_wid, GLint t_heig, GLint t_x, GLint t_y);
         void setTilesCount(GLint t_x, GLint t_y);

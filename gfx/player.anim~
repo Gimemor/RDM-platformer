@@ -1,0 +1,6 @@
+32 32 6
+gfx/player.png
+3
+STATE_RUN     0 3
+STATE_JUMP    4 4
+STATE_NOTHING 5 5

@@ -34,14 +34,20 @@
 			<Add option="-lSDL -lGL -lGLU" />
 		</Linker>
 		<Unit filename="include/Event_Handler.h" />
+		<Unit filename="include/Functions.h" />
 		<Unit filename="include/Level.h" />
+		<Unit filename="include/c_Animation.h" />
 		<Unit filename="include/c_Graphics.h" />
+		<Unit filename="include/c_Player.h" />
 		<Unit filename="include/game.h" />
 		<Unit filename="include/types.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Functions.cpp" />
 		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/c_Animation.cpp" />
 		<Unit filename="src/c_EventHandler.cpp" />
 		<Unit filename="src/c_Graphics.cpp" />
+		<Unit filename="src/c_Player.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/types.cpp" />
 		<Extensions>

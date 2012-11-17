@@ -10,10 +10,14 @@
 #include "Event_Handler.h"
 #include "c_Graphics.h"
 #include "Level.h"
+#include "c_Player.h"
 #include "types.h"
+#include "Functions.h"
 class c_EventHandler;
 class c_Graphics;
 class Level;
+class c_Player;
+extern GLuint loadTexture(char *path);
 
 class c_Game
 {
@@ -25,7 +29,6 @@ class c_Game
         void exit();
         void render();
         void clean();
-        GLuint loadTexture(char *file)  ;
         void setFPS(int x);
         void draw_level();
         void setKeyDelay(int x);
@@ -36,7 +39,6 @@ class c_Game
         virtual ~c_Game();
     protected:
     private:
-        GLuint player;
         uint32 timer;
         int fps;
         int KeyDelay;
@@ -46,6 +48,7 @@ class c_Game
         bool isRunning;
         c_Graphics *gr_Graph;
         Level *map;
+        c_Player* player;
 
 };
 
