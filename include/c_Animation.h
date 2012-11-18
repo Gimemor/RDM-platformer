@@ -17,9 +17,10 @@ class c_Animation
         void loadAnim(char *path);
         object* getFrame();
         object*    getTexture();
-        void update();
+        void update(Uint64 t);
         GLuint   getFrameW();
         GLuint   getFrameH();
+        void setDir(int x, int y);
 
         virtual ~c_Animation();
     protected:
@@ -30,8 +31,10 @@ class c_Animation
         int frame_w; int frame_h;
         int count;
         int frames[STATES][2];
-        unsigned long time;
+        unsigned int fps;
+        int kX; int kY;
         object *atlas;
+        Uint64 time;
 };
 
 #endif // C_ANIMATION_H

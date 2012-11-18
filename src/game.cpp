@@ -1,5 +1,8 @@
 #include "game.h"
 #include <iostream>
+
+
+
 c_Game::c_Game():w_width(768),w_height(512),e_Handler(0), isRunning(0),gr_Graph(0),map(0),player(0)
 {}
 
@@ -13,8 +16,8 @@ bool c_Game::setup()
     gr_Graph=new c_Graphics();
     player=new c_Player();
     e_Handler->setGraph(gr_Graph);
-    e_Handler->setGame(this);
-    setFPS(30);
+    e_Handler->setGame(this,player);
+    setFPS(60);
     setKeyDelay(25); timer=0;
     glEnable(GL_BLEND);
     glEnable(GL_ALPHA_TEST);
@@ -22,13 +25,14 @@ bool c_Game::setup()
     glAlphaFunc(GL_GREATER, 0.5);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     setCaption("Game","");
-    gr_Graph->setClearColor(1.0f, 1.0f, 1.0f,1.0f);
-    gr_Graph->setColor(0.0f, 0.0f, 0.0f, 1.0f);
+    gr_Graph->setClearColor(0.0f, 0.0f, 0.0f,0.0f);
+    gr_Graph->setColor(1.0f, 1.0f,  1.0f, 1.0f);
     gr_Graph->setViewPort(0.0f, 0.0f, w_width, w_height);
     loadLevel("level1/config.ini");
     player->setSkin("gfx/player.anim",1);
     player->setCord(8*32,31*32);
     SDL_EnableKeyRepeat(1,1);
+
     return true;
 }
 
@@ -46,19 +50,20 @@ int c_Game::run()
     if(SDL_SetVideoMode(w_width, w_height, 0, SDL_HWSURFACE | SDL_OPENGL)==0) return -1;
     setup();
     SDL_Event e;
-    unsigned long ltFPS=0, ltKeyD=0; // count of ticks
+    Uint64 ltFPS=0, ltKeyD=0; // count of ticks
+    timer=0;
+   // setKeyDelay(2);
     while(isRunning)
     {
         while(SDL_PollEvent(&e))
          {
             e_Handler->handle(&e);
          }
-        timer=SDL_GetTicks();
-        if(timer/fps>ltFPS)
-         { render(); ltFPS=timer/fps; }
-        if(timer/KeyDelay>ltKeyD)
-         { e_Handler->onKeyDown(); ltKeyD=timer/KeyDelay; }
-
+        timer=SDL_GetTicks(); 
+        if(timer-ltFPS>1000/fps)
+        {render(); ltFPS=timer; }
+        if(timer-ltKeyD>1000/KeyDelay)
+         {  e_Handler->onKeyUp(); e_Handler->onKeyDown(); ltKeyD=timer; }
     }
     clean();
     return 0;
@@ -68,8 +73,9 @@ void c_Game::render()
 {
     gr_Graph->clear();
     draw_level();
+    gr_Graph->setColor(1.0, 1.0f, 1.0f, 1.0f);
     gr_Graph->drawSprite(player->getTex());
-
+ player->update(SDL_GetTicks());
     SDL_GL_SwapBuffers();
 }
 
@@ -84,7 +90,10 @@ void c_Game::draw_level()
     int max_y=camy/tile_h+w_height/tile_h;
     if(max_x>map->getW()) max_x=map->getW();
     if(max_y>map->getH()) max_y=map->getH();
-    gr_Graph->drawSprite(camx,camy, w_width, w_height, map->getBackground());
+    gr_Graph->setColor(5.0, 5.0f, 5.0f, 1.0f);
+  //  gr_Graph->drawSprite(camx,camy, w_width, w_height, map->getBackground());
+    gr_Graph->drawSprite(0,0, map->getW()*tile_w, map->getH()*tile_h, map->getBackground());
+    gr_Graph->setColor(0.5, 0.5f, 0.5f, 1.0f);
     for(int i=camx/tile_w; i<max_x+1; i++)
     {
         for(int j=camy/tile_h; j<max_y+1; j++)
@@ -169,11 +178,10 @@ void c_Game::unloadLevel()
    map=0;
 }
 
-
 void c_Game::clean()
 {
     if(map>0) map->unload();
-    e_Handler->setGraph(0); e_Handler->setGame(0);
+    e_Handler->setGraph(0); e_Handler->setGame(0,0);
     delete   e_Handler;
     delete   gr_Graph;
     gr_Graph=0; e_Handler=0;

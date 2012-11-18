@@ -2,7 +2,7 @@
 1352743226 source:/home/oleg/Projects/Test3/main.cpp
 	"game.h"
 
-1353167978 /home/oleg/Projects/Test3/include/game.h
+1353247003 /home/oleg/Projects/Test3/include/game.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	<GL/gl.h>
@@ -17,13 +17,13 @@
 	"types.h"
 	"Functions.h"
 
-1352731033 /home/oleg/Projects/Test3/include/Event_Handler.h
+1353248278 /home/oleg/Projects/Test3/include/Event_Handler.h
 	"game.h"
 
-1353090222 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
+1353251895 source:/home/oleg/Projects/Test3/src/c_EventHandler.cpp
 	"Event_Handler.h"
 
-1353175858 source:/home/oleg/Projects/Test3/src/game.cpp
+1353252077 source:/home/oleg/Projects/Test3/src/game.cpp
 	"game.h"
 	<iostream>
 
@@ -47,14 +47,14 @@
 1353174258 source:/home/oleg/Projects/Test3/src/types.cpp
 	"types.h"
 
-1353173632 /home/oleg/Projects/Test3/include/c_Player.h
+1353247840 /home/oleg/Projects/Test3/include/c_Player.h
 	"game.h"
 	"c_Animation.h"
 
-1353173766 source:/home/oleg/Projects/Test3/src/c_Player.cpp
+1353249300 source:/home/oleg/Projects/Test3/src/c_Player.cpp
 	"c_Player.h"
 
-1353167908 /home/oleg/Projects/Test3/include/Functions.h
+1353243963 /home/oleg/Projects/Test3/include/Functions.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	<GL/gl.h>
@@ -62,13 +62,13 @@
 	<iostream>
 	<fstream>
 
-1353169400 source:/home/oleg/Projects/Test3/src/Functions.cpp
+1353251727 source:/home/oleg/Projects/Test3/src/Functions.cpp
 	"Functions.h"
 
-1353176013 source:/home/oleg/Projects/Test3/src/c_Animation.cpp
+1353249781 source:/home/oleg/Projects/Test3/src/c_Animation.cpp
 	"c_Animation.h"
 
-1353174519 /home/oleg/Projects/Test3/include/c_Animation.h
+1353249314 /home/oleg/Projects/Test3/include/c_Animation.h
 	<fstream>
 	<iostream>
 	<cstring>

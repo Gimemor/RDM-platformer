@@ -29,6 +29,7 @@ class c_Game
         void exit();
         void render();
         void clean();
+        static uint32 update(Uint32 t,void *param);
         void setFPS(int x);
         void draw_level();
         void setKeyDelay(int x);
@@ -39,9 +40,9 @@ class c_Game
         virtual ~c_Game();
     protected:
     private:
-        uint32 timer;
-        int fps;
-        int KeyDelay;
+        Uint64 timer;
+        unsigned int fps;
+        unsigned int KeyDelay;
         int w_width;
         int w_height;
         c_EventHandler *e_Handler;

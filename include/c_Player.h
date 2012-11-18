@@ -10,6 +10,9 @@ class c_Player
         void setSkin(char *path, bool solid);
         void setCord(int cx, int cy );
         void move(int kx, int ky);
+        void stop();
+        void jump();
+        void update(Uint64 t);
         object* getTex();
         ~c_Player();
     private:

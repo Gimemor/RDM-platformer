@@ -12,4 +12,5 @@ GLuint loadTexture(char *file);
 
 
 
+
 #endif // FUNCTIONS_H_INCLUDED
